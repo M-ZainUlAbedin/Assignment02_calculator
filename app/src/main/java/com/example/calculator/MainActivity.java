@@ -113,7 +113,74 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        btnminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ed1 == null) {
+                    ed1.setText("");
+                } else {
+                    result1 = Float.parseFloat(ed1.getText() + "");
+                    Sub = true;
+                    ed1.setText(null);
+                }
+            }
+        });
+        btnmulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ed1 == null) {
+                    ed1.setText("");
+                } else {
+                    result1 = Float.parseFloat(ed1.getText() + "");
+                    Multi = true;
+                    ed1.setText(null);
+                }
+            }
+        });
+        btndvd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ed1 == null) {
+                    ed1.setText("");
+                } else {
+                    result1 = Float.parseFloat(ed1.getText() + "");
+                    Div = true;
+                    ed1.setText(null);
+                }
+            }
+        });
+        btnequal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result2=Float.parseFloat(ed1.getText()+"");
+                if(Add==true)
+                {
+                    ed1.setText(result1+result2+"");
+                    Add=false;
+                }
+                if(Sub==true)
+                {
+                    ed1.setText(result1-result2+"");
+                    Sub=false;
+                }
+                if(Multi==true)
+                {
+                    ed1.setText(result1*result2+"");
+                    Multi=false;
+                }
+                if(Div==true)
+                {
+                    ed1.setText(result1/result2+"");
+                    Div=false;
+                }
+            }
+        });
+        btnclr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ed1.setText("");
+            }
+        });
 
     }
 }
